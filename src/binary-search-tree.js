@@ -75,8 +75,17 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this._root === null) {
+      return null;
+    }
+    return this.Min(this._root).data;
+  }
+
+  Min(node) {
+    while (node.left !== null) {
+      node = node.left;
+    }
+    return node;
   }
 
   max() {
