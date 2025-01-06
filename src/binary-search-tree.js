@@ -80,8 +80,17 @@ class BinarySearchTree {
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this._root === null) {
+      return null;
+    }
+    return this.Max(this._root).data;
+  }
+
+  Max(node) {
+    while (node.right !== null) {
+      node = node.right;
+    }
+    return node;
   }
 }
 
